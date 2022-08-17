@@ -21,32 +21,70 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+     /* appBar: AppBar(
         title: Text(hotel.name),
-      ),
-      body: ListView(
-        children: [
-          Hero(
-            tag: hotel.id,
-            child: Image.network(
-              hotel.image,
-              width: double.maxFinite,
-              height: 350,
-              fit: BoxFit.cover,
+      ),*/
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            //pinned: true,
+            floating: true,
+            expandedHeight: 350,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(hotel.name),
+              background:  Hero(
+                tag: hotel.id,
+                child: Image.network(
+                  hotel.image,
+                  width: double.maxFinite,
+                  height: 350,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
-          ListTile(
-            title: Text(hotel.name),
-            subtitle: Text(hotel.address),
-            trailing: Text('\$${hotel.price}'),
-          ),
-          SizedBox(height: 20,),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(hotel.description),
+          SliverList(
+            delegate: SliverChildListDelegate([
+              ListTile(
+                title: Text(hotel.name),
+                subtitle: Text(hotel.address),
+                trailing: Text('\$${hotel.price}'),
+              ),
+              SizedBox(height: 20,),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(hotel.description),
+              )
+            ]),
           )
         ],
       ),
+    );
+  }
+
+  ListView buildListView() {
+    return ListView(
+      children: [
+        Hero(
+          tag: hotel.id,
+          child: Image.network(
+            hotel.image,
+            width: double.maxFinite,
+            height: 350,
+            fit: BoxFit.cover,
+          ),
+        ),
+        ListTile(
+          title: Text(hotel.name),
+          subtitle: Text(hotel.address),
+          trailing: Text('\$${hotel.price}'),
+        ),
+        SizedBox(height: 20,),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(hotel.description),
+        )
+      ],
     );
   }
 }
