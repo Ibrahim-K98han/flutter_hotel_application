@@ -34,7 +34,7 @@ class _SecondPageState extends State<SecondPage> {
               title: Text(hotel.name),
               background:  Hero(
                 tag: hotel.id,
-                child: Image.network(
+                child: Image.asset(
                   hotel.image,
                   width: double.maxFinite,
                   height: 350,

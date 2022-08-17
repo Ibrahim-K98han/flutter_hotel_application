@@ -34,7 +34,7 @@ class _HotelItemState extends State<HotelItem> {
                     //borderRadius: BorderRadius.only(topRight: Radius.circular(16),topLeft: Radius.circular(16)),
                     child: Hero(
                       tag: widget.hotel.id,
-                      child: Image.network(
+                      child: Image.asset(
                         widget.hotel.image,
                         width: double.maxFinite,
                         height: 200,
@@ -45,7 +45,7 @@ class _HotelItemState extends State<HotelItem> {
                   Positioned(
                     right: 0,
                     child: IconButton(
-                      icon: Icon(widget.hotel.favorite ? Icons.favorite : Icons.favorite_border),
+                      icon: Icon(widget.hotel.favorite ? Icons.favorite : Icons.favorite_border,color: Colors.red,),
                       onPressed: (){},
                     ),
                   )
