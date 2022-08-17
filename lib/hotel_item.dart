@@ -20,11 +20,15 @@ class _HotelItemState extends State<HotelItem> {
         children: [
           Stack(
             children: [
-              Image.network(
-                widget.hotel.image,
-                width: double.maxFinite,
-                height: 200,
-                fit: BoxFit.cover,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                //borderRadius: BorderRadius.only(topRight: Radius.circular(16),topLeft: Radius.circular(16)),
+                child: Image.network(
+                  widget.hotel.image,
+                  width: double.maxFinite,
+                  height: 200,
+                  fit: BoxFit.cover,
+                ),
               ),
               Positioned(
                 right: 0,
@@ -35,6 +39,9 @@ class _HotelItemState extends State<HotelItem> {
               )
             ],
           ),
+          ListTile(
+            title: Text(widget.hotel.name),
+          )
         ],
       ),
     );
