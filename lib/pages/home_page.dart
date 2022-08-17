@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text('ListView Example'),
+        title: Text('Favorite Hotel'),
       ),
       body: ListView.builder(
         itemCount: hotels.length,
