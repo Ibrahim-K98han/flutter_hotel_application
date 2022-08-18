@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PhotoFilterPage extends StatefulWidget {
-  static const String routeName = '/';
+  static const String routeName = '/photo_filter';
   const PhotoFilterPage({Key? key}) : super(key: key);
 
   @override

@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: PhotoFilterPage.routeName,
+      initialRoute: HomePage.routeName,
       routes: {
         HomePage.routeName : (context) => HomePage(),
         SecondPage.routeName : (context) => SecondPage(),
